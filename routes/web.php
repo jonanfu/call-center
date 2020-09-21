@@ -12,11 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::post('users', 'UserController@store') -> name('users.store');
 Route::delete('users/{user}', 'UserController@destroy') -> name('users.destroy');
 
-Auth::routes();
+//configuracion del controlador para el registro de llamadas
+Route::get('/registro/{llamada}','Registro@llamada')->name('llamada');
+Route::get('/registros', 'RegistroController@llamadas');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'UserController@index')->name('home');
+Route::resource('llamadas', 'Backend\LlamadaController')->middleware('auth')->except('show');
