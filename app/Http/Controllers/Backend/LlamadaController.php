@@ -40,11 +40,23 @@ class LlamadaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LlamadaRequest $request)
     {
+        //dd(['user_id' => auth() -> user()] + $request->all());
+
         $llamada = Llamada::Create([
             'user_id' => auth()->user()->id
         ] + $request->all());
+
+       
+
+//        if($request->atendido){
+//            $llamada->atendido = true;
+//            $llamada->save();
+//        } else {
+//            $llamada->atendido = false;
+//            $llamada->save();
+//        }
 
         return back()->with('status', 'Creado con exito');
 

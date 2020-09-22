@@ -63,7 +63,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Atendido *</label>
-                                <input type="checkbox" name='atendido' class="form-control" required>
+                                <input type="checkbox" name='atendido' class="form-control" >
                             </div>
                             <div class="form-group">
                                 <label>Nivel de Satisfación *</label>

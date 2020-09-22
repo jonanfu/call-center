@@ -11,7 +11,7 @@ class Llamada extends Model
         'nombre_cliente', 'telefono', 'email', 'direccion',
         'fecha', 'hora_inicio', 'hora_fin', 'asunto',
         'tipo_alerta', 'respuesta', 'atendido', 'nivel_satisfacion',
-        'observaciones'
+        'observaciones', 'user_id'
     ];
 
    public function user(){
