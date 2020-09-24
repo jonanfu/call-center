@@ -63,7 +63,14 @@
                             </div>
                             <div class="form-group">
                                 <label>Atendido *</label>
-                                <input type="checkbox" name='atendido' class="form-control" >
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="si" name="atendido" class="custom-control-input" value="si">
+                                    <label class="custom-control-label" for="si">Si</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="no" name="atendido" class="custom-control-input" value="no">
+                                    <label class="custom-control-label" for="no">No</label>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Nivel de Satisfación *</label>

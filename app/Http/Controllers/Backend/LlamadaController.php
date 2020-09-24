@@ -44,8 +44,11 @@ class LlamadaController extends Controller
     {
         //dd(['user_id' => auth() -> user()] + $request->all());
 
+        //dd($request);
+
         $llamada = Llamada::Create([
-            'user_id' => auth()->user()->id
+            'user_id' => auth()->user()->id,
+            'atendido' => $request->atendido == 'si' ? true : false
         ] + $request->all());
 
        
