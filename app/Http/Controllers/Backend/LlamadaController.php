@@ -84,7 +84,8 @@ class LlamadaController extends Controller
      */
     public function edit(Llamada $llamada)
     {
-        //
+        //dd($llamada);
+        return view('llamadas.edit', compact('llamada'));
     }
 
     /**
@@ -94,9 +95,10 @@ class LlamadaController extends Controller
      * @param  \App\Llamada  $llamada
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Llamada $llamada)
+    public function update(LlamadaRequest $request, Llamada $llamada)
     {
-        //
+        $llamada->update([ 'atendido' => $request->atendido == 'si' ? true : false] + $request->all());
+        return back()->with('status', 'Se ha actualzado el registro de la llamada');
     }
 
     /**
@@ -107,6 +109,7 @@ class LlamadaController extends Controller
      */
     public function destroy(Llamada $llamada)
     {
-        //
+        $llamada->delete();
+        return back()->with('status', 'Se ha eliminado el registro de llamada');
     }
 }
