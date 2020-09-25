@@ -47,7 +47,7 @@
                             <td>{{ $llamada->asunto }}</td>-->
                             <td>{{ $llamada->tipo_alerta }}</td>
                             <!--<td>{{ $llamada->respuesta }}</td>-->
-                            <td>@if( $llamada->atendido  == 1)
+                            <td>@if( $llamada->atendido)
                                     Atendido
                                 @else
                                     No Atendido
