@@ -17,6 +17,7 @@ Route::get('/', 'HomeController@index');
 Route::post('users', 'UserController@store') -> name('users.store');
 Route::delete('users/{user}', 'UserController@destroy') -> name('users.destroy');
 Route::get ('/consulta','ConsultaController@index')-> name('consulta');
+Route::get ('/issabel','IssabelController@index')-> name('issabel');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
