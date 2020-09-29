@@ -15,10 +15,10 @@ class AgregarCamposUsuario extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             
-            $table->string('lastname');
-            $table->string('cedula',10)->unique();
-            $table->string('telefono',10);
-            $table->string('carrera');
+            $table->string('lastname')->nullable();
+            $table->string('cedula',10)->unique()->nullable();
+            $table->string('telefono',10)->nullable();
+            $table->string('carrera')->nullable();
             
         });
     }
@@ -30,9 +30,11 @@ class AgregarCamposUsuario extends Migration
      */
     public function down()
     {
+        Schema::table('users', function (Blueprint $table) {
         $table->dropColumn('lastname');
         $table->dropColumn('cedula');
         $table->dropColumn('telefono');
         $table->dropColumn('carrera');
+         });
     }
 }

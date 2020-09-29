@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 Route::get('/', 'HomeController@index');
+Route::get('/home','HomeController@index');
 Route::post('users', 'UserController@store') -> name('users.store');
 Route::delete('users/{user}', 'UserController@destroy') -> name('users.destroy');
 
@@ -21,5 +22,5 @@ Route::delete('users/{user}', 'UserController@destroy') -> name('users.destroy')
 Route::get('/registro/{llamada}','Registro@llamada')->name('llamada');
 Route::get('/registros', 'RegistroController@llamadas');
 
-Route::get('/admin', 'UserController@index')->name('home');
+Route::get('/admin', 'UserController@index');
 Route::resource('llamadas', 'Backend\LlamadaController')->middleware('auth')->except('show');
