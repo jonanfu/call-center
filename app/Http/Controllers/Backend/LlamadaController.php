@@ -18,7 +18,9 @@ class LlamadaController extends Controller
         //return view('llamadas',[
           //  'llamadas' => Llamada::with()->latest()->paginate()
        // ]);
-        $llamadas = Llamada::latest()->get();
+        $llamadas = Llamada::orderBy('id', 'DESC')
+            ->where('user_id', auth()->user()->id)
+            ->paginate();
 
         return view('llamadas.index', compact('llamadas'));
         //return dd($llamadas);

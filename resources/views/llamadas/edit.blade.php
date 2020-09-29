@@ -19,7 +19,8 @@
                         >
                             <div class="form-group">
                                 <label>Nombre Completo *</label>
-                                <input type="text" name='nombre_cliente' class="form-control" required value={{ old('nombre_cliente', $llamada->nombre_cliente) }}>
+                                <textarea name="nombre_cliente" class="form-control"  rows="1">{{ old('nombre_cliente', $llamada->nombre_cliente) }}</textarea>
+                                <!--<input type="text" name='nombre_cliente' class="form-control" size="60" required value={{ old('nombre_cliente', $llamada->nombre_cliente) }}>-->
                             </div>
                             <div class="form-group">
                                 <label>Telefono *</label>
@@ -30,8 +31,9 @@
                                 <input type="email" name='email' class="form-control" required value={{ old('email', $llamada->email) }}>
                             </div>
                             <div class="form-group">
-                                <label>direccion *</label>
-                                <input type="text" name='direccion' class="form-control" required value={{ old('direccion', $llamada->direccion) }}>
+                                <label>Dirección *</label>
+                                <textarea name="direccion" class="form-control" rows="1">{{ old('direccion', $llamada->direccion) }}</textarea>
+                                <!--<input type="text" name='direccion' class="form-control" required value={{ old('direccion', $llamada->direccion) }}>-->
                             </div>
                             <div class="form-group">
                                 <label>Fecha *</label>

@@ -19,15 +19,15 @@
                 <table class="table">
                     <thead>
                         <th>Codigo</th>
-                        <!--<th>Nombre cliente</th>
+                        <th>Nombre</th>
                         <th>Telefono</th>
-                        <th>Email</th>
+                        <!--<th>Email</th>
                         <th>Direccion</th>
                         <th>Fecha</th>
                         <th>Hora inicio</th>
                         <th>Hora fin</th>
                         <th>Asunto</th>-->
-                        <th>Tipo de alerta</th>
+                        <th>Alerta</th>
                         <!--<th>Respuesta</th>-->
                         <th>Atendido</th>
                         <th>Nivel de satisfación</th>
@@ -37,15 +37,27 @@
                         @foreach($llamadas as $llamada)
                         <tr>
                             <td>{{ $llamada->id }}</td>
-                            <!--<td>{{ $llamada->nombre_cliente }}</td>
+                            <td>{{ $llamada->nombre_cliente }}</td>
                             <td>{{ $llamada->telefono }}</td>
-                            <td>{{ $llamada->email }}</td>
-                            <td>{{ $llamada->direccion }}</td>-->
+                            <!--<td>{{ $llamada->email }}</td>-->
+                            <!--<td>{{ $llamada->direccion }}</td>-->
                             <!--<td>{{ $llamada->fecha }}</td>
                             <td>{{ $llamada->hora_inicio }}</td>
                             <td>{{ $llamada->hora_fin }}</td>
                             <td>{{ $llamada->asunto }}</td>-->
-                            <td>{{ $llamada->tipo_alerta }}</td>
+                            <td>@switch($llamada->tipo_alerta)
+                                    @case(1)
+                                        Verde
+                                        @break
+                                    @case(2)
+                                        Amarillo
+                                        @break
+                                    @case(3)
+                                        Verde
+                                        @break
+                                @endswitch
+                            
+                            </td>
                             <!--<td>{{ $llamada->respuesta }}</td>-->
                             <td>@if( $llamada->atendido)
                                     Atendido

@@ -34,7 +34,7 @@ class LlamadaRequest extends FormRequest
             'asunto' => 'required',
             'tipo_alerta' => 'required',
             'respuesta' => 'required',
-            //'atendido' => 'required',
+            'atendido' => 'required',
             'nivel_satisfacion' => 'required',
             'observaciones' => 'required'
         ];
