@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
                 Registro de llamadas
@@ -56,7 +56,6 @@
                                         Verde
                                         @break
                                 @endswitch
-                            
                             </td>
                             <!--<td>{{ $llamada->respuesta }}</td>-->
                             <td>@if( $llamada->atendido)
@@ -84,8 +83,10 @@
                             </td>
                         </tr>
                         @endforeach
+                        
                     </tbody>
                 </table>
+                {{ $llamadas -> links() }}
                 </div>
             </div>
         </div>
