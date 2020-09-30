@@ -20,7 +20,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => ['required','email', 'unique:users'],
-            'cedula' => ['required','max:10', 'unique:users'],
+            'cedula' => ['required','mmin:10', 'unique:users'],
             'password' => ['required', 'min:8', 'unique:users']
         ]);
 
