@@ -24,5 +24,5 @@ Route::delete('users/{user}', 'UserController@destroy') -> name('users.destroy')
 Route::get('/registro/{llamada}','Registro@llamada')->name('llamada');
 Route::get('/registros', 'RegistroController@llamadas');
 
-Route::get('/admin', 'UserController@index');
+Route::get('/usuarios', 'UserController@index')->name('usuarios');
 Route::resource('llamadas', 'Backend\LlamadaController')->middleware('auth')->except('show');

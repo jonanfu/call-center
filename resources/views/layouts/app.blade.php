@@ -43,17 +43,39 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li>
-                                <a class="nav-link" href="{{ route('llamadas.index')}}">
-                                    Llamadas
-                                </a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
+                            
+                        @else
+                            @switch(Auth::user()->rol)
+                                @case(1)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrar Usuarios') }}</a>
+                                </li>
+
+                                <li>
+                                    <a class="nav-link" href="{{ route('usuarios')}}">
+                                        Usuarios
+                                    </a>
+                                </li>
+                                @break
+                                @case(2)
+                                <li>
+                                    <a class="nav-link" href="{{ route('llamadas')}}">
+                                        Consultas
+                                    </a>
+                                </li>
+                                @break
+                                @case(3)
+                                <li>
+                                    <a class="nav-link" href="{{ route('llamadas.index')}}">
+                                        Llamadas
+                                    </a>
+                                </li>
+                                @break
+                            
+                            @endswitch
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
