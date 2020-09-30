@@ -62,7 +62,27 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-
+//inicio conexion 2
+'issabel' => [
+    'driver' => 'mysql',
+    'url' => env('DATABASE_URL'),
+    'host' => env('ISSABEL_HOST', '192.168.99.106'),
+    'port' => env('ISSABEL_PORT', '3306'),
+    'database' => env('ISSABEL_DATABASE', 'forge'),
+    'username' => env('ISSABEL_USERNAME', 'forge'),
+    'password' => env('ISSABEL_PASSWORD', ''),
+    'unix_socket' => env('ISSABEL_SOCKET', ''),
+    'charset' => 'utf8mb4',
+    'collation' => 'utf8mb4_unicode_ci',
+    'prefix' => '',
+    'prefix_indexes' => true,
+    'strict' => true,
+    'engine' => null,
+    'options' => extension_loaded('pdo_mysql') ? array_filter([
+        PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+    ]) : [],
+],
+//fin conexxion 2
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
