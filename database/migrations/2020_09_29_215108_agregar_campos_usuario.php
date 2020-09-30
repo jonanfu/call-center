@@ -13,12 +13,11 @@ class AgregarCamposUsuario extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::create('carreras', function (Blueprint $table) {
+            $table->id();
             
-            $table->string('lastname')->nullable();
-            $table->string('cedula',10)->unique()->nullable();
-            $table->string('telefono',10)->nullable();
-            $table->string('carrera')->nullable();
+            $table->timestamps();
+            
             
         });
     }

@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 Route::get('/', 'HomeController@index');
-Route::get('/home','HomeController@index');
+Route::get('/home',function(){
+    return view('auth.register');
+});
 Route::post('users', 'UserController@store') -> name('users.store');
 Route::delete('users/{user}', 'UserController@destroy') -> name('users.destroy');
 
