@@ -55,7 +55,7 @@ tr:nth-child(even){
  
   <td>{{$usuario->id}}</td>
   <td>{{$usuario->cedula}}</td>
-    <td>{{$usuario->name}}</td>
+    <td> {{$usuario->lastname}} {{$usuario->name}}</td>
     <td>{{$usuario->nombre_cliente}}</td>
     <td>{{$usuario->telefono}}</td>
     <td>{{$usuario->email}}</td>
@@ -63,9 +63,27 @@ tr:nth-child(even){
     <td>{{$usuario->fecha}}</td>
     <td>{{$usuario->hora_inicio}}</td>
     <td>{{$usuario->hora_fin}}</td>
-    <td>{{$usuario->tipo_alerta}}</td>
+    <td>
+        @switch($usuario->tipo_alerta)
+            @case(1)
+                Verde
+                @break
+            @case(2)
+                Amarillo
+                @break
+            @case(3)
+                Verde
+                @break
+            @endswitch
+    </td>
     <td>{{$usuario->respuesta}}</td>
-    <td>{{$usuario->atendido}}</td>
+    <td>
+        @if( $usuario->atendido)
+            Atendido
+        @else
+            No Atendido
+        @endif
+    </td>
     <td>{{$usuario->nivel_satisfacion}}</td>
     <td>{{$usuario->observaciones}}</td>
     <td>{{$usuario->asunto}}</td>

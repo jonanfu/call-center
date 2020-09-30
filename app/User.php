@@ -40,4 +40,10 @@ class User extends Authenticatable
     public function llamada(){
         return $this->hasMany(Llamada::class);
     }
+
+    public function getFullNameAttribute()
+    {
+        $fullName = $this->lastname . ' ' . $this->name;
+        return mb_strtoupper($fullName);
+    }
 }

@@ -10,7 +10,7 @@ class ConsultaController extends Controller
     {
 
         $usuarios= \DB::table('users')->join('llamadas','users.id','=','llamadas.user_id')
-        ->select('users.id AS cedula','users.name','llamadas.*')-> get();
+        ->select('users.id AS cedula','users.lastname','users.name','llamadas.*')-> get();
        // return $usuarios;
        return view('consultas.consulta',compact('usuarios'));
     }

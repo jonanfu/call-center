@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    </head>
-    <body>
+@section('content')
         <div class="container">
-            <div class="row">
+            <!--<div class="row">
                 <div class="col-sm-8 ex-auto">
                 <div class="card border-0 shadow">
                 <div class="card-body">
@@ -40,14 +30,20 @@
                             </div>
                         </div>
                     </form>
+                    
                     </div>
-                </div>
+                </div>-->
                 <table class="table">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Nombre</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Cedula</th>
+                            <th>Telefono</th>
                             <th>Email</th>
+                            <th>Carrera</th>
+                            <th>Rol</th>
                             <th>&nbsp;</th>
                         </tr>
                           
@@ -57,7 +53,54 @@
                     <tr>
                         <td>{{ $user-> id }}</td>
                         <td>{{ $user-> name }}</td>
+                        <td>{{ $user-> lastname }}</td>
+                        <td>{{ $user-> cedula }}</td>
+                        <td>{{ $user-> telefono }}</td>
                         <td>{{ $user-> email }}</td>
+                        <td>
+                            @switch($user->carrera)
+                                @case(1)
+                                Administración Pública
+                                @break
+                                @case(2)
+                                Administración de Empresas
+                                @break        
+                                @case(3)
+                                Agropecuaria
+                                @break        
+                                @case(4)
+                                Alimentos
+                                @break
+                                @case(5)
+                                Comercio Exterior
+                                @break   
+                                @case(6)
+                                Computación
+                                @break
+                                @case(7)
+                                Enfermeria
+                                @break
+                                @case(8)
+                                Logistica y Transporte
+                                @break
+                                @case(9)
+                                Turismo
+                                @break
+                            @endswitch
+                        </td>
+                        <td>
+                            @switch($user->rol)
+                                @case(1)
+                                    Administrador
+                                @break
+                                @case(2)
+                                    Profesor
+                                @break
+                                @case(3)
+                                    Estudiante
+                                @break
+                            @endswitch
+                        </td>
                         <td>
                             <form action="{{ route('users.destroy', $user)}}" method="POST">
                                 @method('DELETE')
@@ -73,9 +116,8 @@
                     @endforeach
                     </tbody>
                 </table>
-
+                {{ $users -> links() }}
                 </div>
             </div>
         </div>
-    </body>
-</html>
+@endsection
