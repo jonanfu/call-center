@@ -37,8 +37,14 @@
                             <label for="cedula" class="col-md-4 col-form-label text-md-right">Cédula</label>
 
                             <div class="col-md-6">
-                                <input id="cedula" size="10" type="text" class="form-control" name="cedula" value="{{ old('cedula') }}" required >
+                                <input id="cedula" size="10" type="text" class="form-control @error('cedula') is-invalid @enderror" name="cedula" value="{{ old('cedula') }}" required >
                             </div>
+
+                            @error('cedula')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
 
                         

@@ -20,7 +20,8 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => ['required','email', 'unique:users'],
-            'password' => ['required', 'min:8']
+            'cedula' => ['required','max:10', 'unique:users'],
+            'password' => ['required', 'min:8', 'unique:users']
         ]);
 
         User::create([
