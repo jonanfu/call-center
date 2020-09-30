@@ -17,7 +17,7 @@ $factory->define(Llamada::class, function (Faker $faker) {
         'hora_inicio' => $faker -> time($format = 'H:i:s', $max = 'now'),
         'hora_fin' => $faker ->time($format = 'H:i:s', $max = 'now'),
         'asunto' => $faker -> text(100),
-        'tipo_alerta' => $faker -> randomElement(array('Verde', 'Amarillo','Rojo')),
+        'tipo_alerta' => $faker -> randomElement(array(1, 2,3)),
         'respuesta' => $faker -> text(100),
         'atendido' => $faker -> randomElement($array = array(true, false)),
         'nivel_satisfacion' => $faker -> numberBetween(1, 5),

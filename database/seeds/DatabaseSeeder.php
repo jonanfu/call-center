@@ -26,6 +26,32 @@ class DatabaseSeeder extends Seeder
 
         ]);
 
+        User::create([
+            'name' => 'Elena Josseline',
+            'lastname' => 'Roman Arcos',
+            'cedula' => '1002004001',
+            'telefono' => '0982682457',
+            'carrera' =>  6,
+            'rol' => 2,
+            'email' => 'profe@admin.com',
+            'password' => bcrypt('123456'),
+
+
+        ]);
+
+        User::create([
+            'name' => 'Leidy Rocio',
+            'lastname' => 'Figueroa Tepud',
+            'cedula' => '1002003001',
+            'telefono' => '0982682457',
+            'carrera' =>  6,
+            'rol' => 3,
+            'email' => 'student@admin.com',
+            'password' => bcrypt('123456'),
+
+
+        ]);
+
      //   Alerta::create(
      //       ['tipo_alerta'=> 'Verde'],
      //       ['tipo_alerta'=> 'Amarillo'],

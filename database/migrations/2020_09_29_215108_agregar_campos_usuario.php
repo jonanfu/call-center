@@ -13,13 +13,13 @@ class AgregarCamposUsuario extends Migration
      */
     public function up()
     {
-        Schema::create('carreras', function (Blueprint $table) {
-            $table->id();
+       // Schema::create('carreras', function (Blueprint $table) {
+        //    $table->id();
             
-            $table->timestamps();
+        //    $table->timestamps();
             
             
-        });
+        // });
     }
 
     /**
@@ -29,11 +29,11 @@ class AgregarCamposUsuario extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-        $table->dropColumn('lastname');
-        $table->dropColumn('cedula');
-        $table->dropColumn('telefono');
-        $table->dropColumn('carrera');
-         });
+       // Schema::table('users', function (Blueprint $table) {
+       // $table->dropColumn('lastname');
+       // $table->dropColumn('cedula');
+      //  $table->dropColumn('telefono');
+      //  $table->dropColumn('carrera');
+      //   });
     }
 }

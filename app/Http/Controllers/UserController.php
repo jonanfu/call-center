@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function index()
@@ -26,7 +26,12 @@ class UserController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request -> password),
+            'lastname' => $request->lastname,
+            'cedula' => $request->cedula,
+            'telefono' => $request->telefono,
+            'carrera' => $request->carrera,
+            'rol' => $request->rol,
+            'password' => Hash::make($request->password),
         ]);
 
         return back();

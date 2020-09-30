@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Registrar') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('users.store') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -88,7 +88,7 @@
                                     <select name="rol" class="form-control" required>
                                         <option value="1">Administrador</option>
                                         <option value="2">Profesor</option>
-                                        <option value="3" selected>Estudiantes</option>
+                                        <option value="3" selected>Estudiante</option>
                                     </select>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Registrar') }}
+                                    {{ __('Register') }}
                                 </button>
                             </div>
                         </div>
