@@ -67,6 +67,10 @@
                                 @break
                                 @case(3)
                                 <li>
+                                    <a class="nav-link" href="{{ route('reportes.index')}}">
+                                        Reportes
+                                    </a>
+                                </li>
                                     <a class="nav-link" href="{{ route('llamadas.index')}}">
                                         Llamadas
                                     </a>

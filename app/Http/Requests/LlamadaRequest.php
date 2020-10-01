@@ -26,7 +26,7 @@ class LlamadaRequest extends FormRequest
         return [
             'nombre_cliente' => 'required',
             'telefono' => 'required',
-            'email' => 'required',
+            //'email' => 'required',
             'direccion' => 'required',
             'fecha' => 'required',
             'hora_inicio' => 'required',

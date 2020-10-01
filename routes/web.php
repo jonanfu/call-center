@@ -18,6 +18,7 @@ Route::post('users', 'UserController@store') -> name('users.store')->middleware(
 Route::delete('users/{user}', 'UserController@destroy') -> name('users.destroy')->middleware('auth');
 Route::get('users/{user}', 'UserController@edit')->name('users.edit')->middleware('auth');
 Route::put('users/{user}', 'UserController@update')->name('users.update')->middleware('auth');
+Route::get('/reporte', 'ReporteController@index')->name('reportes.index')->middleware('auth');
 Route::get('/home',function(){
     return view('auth.register');
 })->middleware('auth');

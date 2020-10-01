@@ -21,6 +21,6 @@ class LlamadasPolicy
     }
 
     public function pass(User $user, Llamada $llamada){
-        return $user -> id == $llamada -> id;
+        return $user -> id === $llamada -> user_id;
     }
 }

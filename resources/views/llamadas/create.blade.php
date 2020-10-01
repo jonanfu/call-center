@@ -27,7 +27,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Email *</label>
-                                <input type="email" name='email' class="form-control" required>
+                                <input type="email" name='email' class="form-control" >
                             </div>
                             <div class="form-group">
                                 <label>Ciudad *</label>
