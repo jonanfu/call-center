@@ -43,7 +43,10 @@
                             <th>Telefono</th>
                             <th>Email</th>
                             <th>Carrera</th>
+                            <th>Nivel</th>
+                            <th>Paralelo</th>
                             <th>Rol</th>
+                            <th>&nbsp;</th>
                             <th>&nbsp;</th>
                         </tr>
                           
@@ -89,6 +92,68 @@
                             @endswitch
                         </td>
                         <td>
+                            @switch($user->nivel)
+                                @case(1)
+                                Primero
+                                @break
+                                @case(2)
+                                Segundo
+                                @break        
+                                @case(3)
+                                Tercero
+                                @break        
+                                @case(4)
+                                Cuarto
+                                @break
+                                @case(5)
+                                Quinto
+                                @break   
+                                @case(6)
+                                Sexto
+                                @break
+                                @case(7)
+                                Séptimo
+                                @break
+                                @case(8)
+                                Octavo
+                                @break
+                                @case(9)
+                                Noveno
+                                @break
+                                @case(10)
+                                Décimo
+                                @break
+                                @case(11)
+                                No aplica
+                                @break
+                            @endswitch
+                        </td>
+                        <td>
+                            @switch($user->paralelo)
+                                @case(1)
+                                AM
+                                @break
+                                @case(2)
+                                AT
+                                @break        
+                                @case(3)
+                                BM
+                                @break        
+                                @case(4)
+                                BT
+                                @break
+                                @case(5)
+                                CM
+                                @break   
+                                @case(6)
+                                CT
+                                @break
+                                @case(7)
+                                No aplica
+                                @break
+                            @endswitch
+                        </td>
+                        <td>
                             @switch($user->rol)
                                 @case(1)
                                     Administrador
@@ -100,6 +165,9 @@
                                     Estudiante
                                 @break
                             @endswitch
+                        </td>
+                        <td>
+                            <a href="{{ route('users.edit', $user) }}" class="btn btn-primary btn-sm">Editar</a>
                         </td>
                         <td>
                             <form action="{{ route('users.destroy', $user)}}" method="POST">

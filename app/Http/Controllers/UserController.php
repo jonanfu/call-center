@@ -18,10 +18,10 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name' => ['required', 'string', 'max:255'],
             'email' => ['required','email', 'unique:users'],
-            'cedula' => ['required','mmin:10', 'unique:users'],
-            'password' => ['required', 'min:8', 'unique:users']
+            'cedula' => ['required','min:10', 'unique:users'],
+            'password' => ['required', 'min:8']
         ]);
 
         User::create([
@@ -31,11 +31,25 @@ class UserController extends Controller
             'cedula' => $request->cedula,
             'telefono' => $request->telefono,
             'carrera' => $request->carrera,
+            'nivel' => $request->nivel,
+            'paralelo' => $request->paralelo,
             'rol' => $request->rol,
             'password' => Hash::make($request->password),
         ]);
 
-        return back();
+        return back()->with('status', 'Se ha registrado un usuario');
+    }
+
+    public function edit(User $user)
+    {
+        return view('users.edit', compact('user'));
+    }
+
+    public function update(Request $request, User $user)
+    {
+        
+        $user->update($request->all());
+        return back()->with('status', 'Se ha actualizado los datos del usuario');
     }
 
     public function destroy(User $user)

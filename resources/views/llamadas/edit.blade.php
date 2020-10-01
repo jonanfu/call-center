@@ -31,6 +31,11 @@
                                 <input type="email" name='email' class="form-control" required value={{ old('email', $llamada->email) }}>
                             </div>
                             <div class="form-group">
+                                <label>Ciudad *</label>
+                                <textarea name="ciudad" class="form-control" rows="1">{{ old('ciudad', $llamada->ciudad) }}</textarea>
+                                <!--<input type="text" name='direccion' class="form-control" required value={{ old('direccion', $llamada->direccion) }}>-->
+                            </div>
+                            <div class="form-group">
                                 <label>Dirección *</label>
                                 <textarea name="direccion" class="form-control" rows="1">{{ old('direccion', $llamada->direccion) }}</textarea>
                                 <!--<input type="text" name='direccion' class="form-control" required value={{ old('direccion', $llamada->direccion) }}>-->
@@ -54,9 +59,9 @@
                             <div class="form-group">
                                 <label>Tipo de Alerta *</label>
                                 <select name="tipo_alerta" class="form-group" value={{ old('tipo_alerta', $llamada->tipo_alerta) }}>
-                                    <option value="Verde" {{ old('tipo_alerta', $llamada->tipo_alerta) === "Verde"  ? 'selected' : '' }}>Verde</option>
-                                    <option value="Amarillo" {{ old('tipo_alerta', $llamada->tipo_alerta) === "Amarillo"  ? 'selected' : '' }}>Amarillo</option>
-                                    <option value="Rojo" {{ old('tipo_alerta', $llamada->tipo_alerta) === "Rojo"  ? 'selected' : '' }}>Rojo</option>
+                                    <option value="1" {{ old('tipo_alerta', $llamada->tipo_alerta) == "1"  ? 'selected' : '' }}>Verde</option>
+                                    <option value="2" {{ old('tipo_alerta', $llamada->tipo_alerta) == "2"  ? 'selected' : '' }}>Amarillo</option>
+                                    <option value="3" {{ old('tipo_alerta', $llamada->tipo_alerta) == "3"  ? 'selected' : '' }}>Rojo</option>
                                 </select>
                             </div>
                             <div class="form-group">

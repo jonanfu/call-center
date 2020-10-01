@@ -19,6 +19,7 @@ class CreateLlamadasTable extends Migration
             $table->string('nombre_cliente');
             $table->string('telefono');
             $table->string('email');
+            $table->string('ciudad');
             $table->string('direccion');
             $table->date('fecha')->nullable();
             $table->time('hora_inicio')->nullable();

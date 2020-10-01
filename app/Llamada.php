@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Llamada extends Model
 {
     protected $fillable = [
-        'nombre_cliente', 'telefono', 'email', 'direccion',
+        'nombre_cliente', 'telefono', 'email','ciudad', 'direccion',
         'fecha', 'hora_inicio', 'hora_fin', 'asunto',
         'tipo_alerta', 'respuesta', 'atendido', 'nivel_satisfacion',
         'observaciones', 'user_id'

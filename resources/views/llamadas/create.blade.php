@@ -30,7 +30,11 @@
                                 <input type="email" name='email' class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>direccion *</label>
+                                <label>Ciudad *</label>
+                                <input type="text" name='ciudad' class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Direccion *</label>
                                 <input type="text" name='direccion' class="form-control" required>
                             </div>
                             <div class="form-group">

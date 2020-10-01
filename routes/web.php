@@ -13,16 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Auth::routes();
-
 Route::get('/', 'HomeController@index');
-Route::post('users', 'UserController@store') -> name('users.store');
-Route::delete('users/{user}', 'UserController@destroy') -> name('users.destroy');
+Route::post('users', 'UserController@store') -> name('users.store')->middleware('auth');
+Route::delete('users/{user}', 'UserController@destroy') -> name('users.destroy')->middleware('auth');
+Route::get('users/{user}', 'UserController@edit')->name('users.edit')->middleware('auth');
+Route::put('users/{user}', 'UserController@update')->name('users.update')->middleware('auth');
 Route::get('/home',function(){
     return view('auth.register');
-});
-Route::get ('/consulta','ConsultaController@index')-> name('consulta');
-Route::get ('/issabel','IssabelController@index')-> name('issabel');
-Auth::routes();
+})->middleware('auth');
 
-Route::get('/usuarios', 'UserController@index')->name('usuarios');
+Route::get ('/consulta','ConsultaController@index')-> name('consulta')->middleware('auth');
+Route::get ('/issabel','IssabelController@index')-> name('issabel');
+
+
+Route::get('/usuarios', 'UserController@index')->name('usuarios')->middleware('auth');
 Route::resource('llamadas', 'Backend\LlamadaController')->middleware('auth')->except('show');

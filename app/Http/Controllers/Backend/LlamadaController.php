@@ -85,6 +85,7 @@ class LlamadaController extends Controller
      */
     public function edit(Llamada $llamada)
     {
+        $this->authorize('pass', $llamada);
         //dd($llamada);
         return view('llamadas.edit', compact('llamada'));
     }
@@ -98,6 +99,7 @@ class LlamadaController extends Controller
      */
     public function update(LlamadaRequest $request, Llamada $llamada)
     {
+        $this->authorize('pass', $llamada);
         $llamada->update([ 'atendido' => $request->atendido == 'si' ? true : false] + $request->all());
         return back()->with('status', 'Se ha actualzado el registro de la llamada');
     }
@@ -110,6 +112,7 @@ class LlamadaController extends Controller
      */
     public function destroy(Llamada $llamada)
     {
+        $this->authorize('pass', $llamada);
         $llamada->delete();
         return back()->with('status', 'Se ha eliminado el registro de llamada');
     }

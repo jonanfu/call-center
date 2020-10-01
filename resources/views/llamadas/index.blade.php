@@ -22,16 +22,20 @@
                         <th>Nombre</th>
                         <th>Telefono</th>
                         <!--<th>Email</th>
+                        
                         <th>Direccion</th>
                         <th>Fecha</th>
                         <th>Hora inicio</th>
                         <th>Hora fin</th>
                         <th>Asunto</th>-->
+                        <th>Ciudad</th>
                         <th>Alerta</th>
                         <!--<th>Respuesta</th>-->
                         <th>Atendido</th>
                         <th>Nivel de satisfación</th>
                         <!--<th>Observaciones</th>-->
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
                     </thead>
                     <tbody>
                         @foreach($llamadas as $llamada)
@@ -40,6 +44,7 @@
                             <td>{{ $llamada->nombre_cliente }}</td>
                             <td>{{ $llamada->telefono }}</td>
                             <!--<td>{{ $llamada->email }}</td>-->
+                            <td>{{ $llamada->ciudad }}</td>
                             <!--<td>{{ $llamada->direccion }}</td>-->
                             <!--<td>{{ $llamada->fecha }}</td>
                             <td>{{ $llamada->hora_inicio }}</td>

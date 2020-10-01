@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('telefono',10);
             $table->string('email')->unique();
             $table->integer('carrera');
+            $table->integer('nivel');
+            $table->integer('paralelo');
             $table->integer('rol');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

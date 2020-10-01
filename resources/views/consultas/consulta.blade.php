@@ -37,6 +37,7 @@ tr:nth-child(even){
     <td>Cliente</td>
     <td>Telefono</td>
     <td>Correo Electronico</td>
+    <td>Ciudad</td>
     <td>Direccion</td>
     <td>Fecha</td>
     <td>Inicio de la llamada</td>
@@ -59,6 +60,7 @@ tr:nth-child(even){
     <td>{{$usuario->nombre_cliente}}</td>
     <td>{{$usuario->telefono}}</td>
     <td>{{$usuario->email}}</td>
+    <td>{{ $usuario->ciudad }}</td>
     <td>{{$usuario->direccion}}</td>
     <td>{{$usuario->fecha}}</td>
     <td>{{$usuario->hora_inicio}}</td>

@@ -8,12 +8,16 @@
                 <div class="card-header">{{ __('Registrar') }}</div>
 
                 <div class="card-body">
+                @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <form method="POST" action="{{ route('users.store') }}">
                         @csrf
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Nombres</label>
-
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                 @error('name')
@@ -32,7 +36,6 @@
                             </div>
                         </div>
 
-                       
                         <div class="form-group row">
                             <label for="cedula" class="col-md-4 col-form-label text-md-right">Cédula</label>
 
@@ -68,8 +71,8 @@
                                     </span>
                                 @enderror
                             </div>
-
                         </div>
+
                         <div class="form-group row">
                             <label for="carrera" class="col-md-4 col-form-label text-md-right">Carrera</label>
                                 <div class="col-md-6">
@@ -85,19 +88,53 @@
                                         <option value="9">Turismo</option>
                                     </select>
                                 </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="carrera" class="col-md-4 col-form-label text-md-right">Nivel</label>
+                                <div class="col-md-6">
+                                    <select name="nivel" class="form-control" required>
+                                        <option value="1">Primero</option>
+                                        <option value="2">Segundo</option>
+                                        <option value="3">Tercero</option>
+                                        <option value="4">Cuarto</option>
+                                        <option value="5">Quinto</option>
+                                        <option value="6">Sexto</option>
+                                        <option value="7">Séptimo</option>
+                                        <option value="8">Octavo</option>
+                                        <option value="9">Noveno</option>
+                                        <option value="10">Décimo</option>
+                                        <option value="11">No aplica</option>
+                                    </select>
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="paralelo" class="col-md-4 col-form-label text-md-right">Paralelo</label>
+                                <div class="col-md-6">
+                                    <select name="paralelo" class="form-control" required>
+                                        <option value="1">AM</option>
+                                        <option value="2">AT</option>
+                                        <option value="3">BM</option>
+                                        <option value="4">BT</option>
+                                        <option value="5">CM</option>
+                                        <option value="6">CT</option>
+                                        <option value="7">No aplica</option>
+                                    </select>
+                                </div>
+                        </div>
                         
+
                         <div class="form-group row">
                             <label for="rol" class="col-md-4 col-form-label text-md-right">Rol</label>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <select name="rol" class="form-control" required>
                                         <option value="1">Administrador</option>
                                         <option value="2">Profesor</option>
                                         <option value="3" selected>Estudiante</option>
                                     </select>
-                                </div>
-                            </div>
+                              </div>
+                        </div>
                         
 
                         <div class="form-group row">
