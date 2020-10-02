@@ -28,11 +28,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Email *</label>
-                                <input type="email" name='email' class="form-control" required value={{ old('email', $llamada->email) }}>
+                                <input type="email" name='email' class="form-control" value={{ old('email', $llamada->email) }}>
                             </div>
                             <div class="form-group">
                                 <label>Ciudad *</label>
-                                <textarea name="ciudad" class="form-control" rows="1">{{ old('ciudad', $llamada->ciudad) }}</textarea>
+                                <textarea name="ciudad" class="form-control" rows="1" required>{{ old('ciudad', $llamada->ciudad) }}</textarea>
                                 <!--<input type="text" name='direccion' class="form-control" required value={{ old('direccion', $llamada->direccion) }}>-->
                             </div>
                             <div class="form-group">
