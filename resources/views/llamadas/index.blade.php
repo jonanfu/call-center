@@ -58,7 +58,7 @@
                                         Amarillo
                                         @break
                                     @case(3)
-                                        Verde
+                                        Rojo
                                         @break
                                 @endswitch
                             </td>
