@@ -74,7 +74,7 @@ tr:nth-child(even){
                 Amarillo
                 @break
             @case(3)
-                Verde
+                Rojo
                 @break
             @endswitch
     </td>
