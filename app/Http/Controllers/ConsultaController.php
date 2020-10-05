@@ -11,7 +11,7 @@ class ConsultaController extends Controller
         
 
         $usuarios= \DB::table('users')->join('llamadas','users.id','=','llamadas.user_id')
-        ->select('users.cedula AS cedula','users.lastname','users.name','llamadas.*')-> get();
+        ->select('users.cedula AS cedula','users.lastname','users.name','llamadas.*')->where("users.carrera", "=", auth()->user()->carrera)->get();
        // return $usuarios;
        //dd($usuarios);
        return view('consultas.consulta',compact('usuarios'));

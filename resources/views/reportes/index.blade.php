@@ -42,7 +42,7 @@ tr:nth-child(even){
     <td>Fecha</td>
     <td>Inicio de la llamada</td>
     <td>Fin de la llamada</td>
-    <td>Tipo de Alerta</td>
+    <td>Nivel de Alerta</td>
     <td>Respuesta</td>
     <td>Atendido</td>
     <td>Calificacion</td>
@@ -54,13 +54,13 @@ tr:nth-child(even){
   @foreach($llamadas as $llamada)
   <tr>
  
-  <td>{{$llamada->id}}</td>
-  <td>{{$llamada->user->cedula}}</td>
-    <td> {{$llamada->user->full_name}}</td>
+    <td>{{$llamada->id}}</td>
+    <td>{{$llamada->user->cedula}}</td>
+    <td>{{$llamada->user->full_name}}</td>
     <td>{{$llamada->nombre_cliente}}</td>
     <td>{{$llamada->telefono}}</td>
     <td>{{$llamada->email}}</td>
-    <td>{{ $llamada->ciudad }}</td>
+    <td>{{$llamada->ciudad }}</td>
     <td>{{$llamada->direccion}}</td>
     <td>{{$llamada->fecha}}</td>
     <td>{{$llamada->hora_inicio}}</td>
@@ -68,14 +68,14 @@ tr:nth-child(even){
     <td>
         @switch($llamada->tipo_alerta)
             @case(1)
-                Verde
-                @break
+            Baja
+            @break
             @case(2)
-                Amarillo
-                @break
+            Media
+            @break
             @case(3)
-                Rojo
-                @break
+            Alta
+            @break
             @endswitch
     </td>
     <td>{{$llamada->respuesta}}</td>

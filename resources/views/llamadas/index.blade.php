@@ -52,13 +52,13 @@
                             <td>{{ $llamada->asunto }}</td>-->
                             <td>@switch($llamada->tipo_alerta)
                                     @case(1)
-                                        Verde
+                                        Baja
                                         @break
                                     @case(2)
-                                        Amarillo
+                                        Media
                                         @break
                                     @case(3)
-                                        Rojo
+                                        Alta
                                         @break
                                 @endswitch
                             </td>

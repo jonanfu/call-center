@@ -17,10 +17,11 @@ Route::get('/', 'HomeController@index');
 Route::post('users', 'UserController@store') -> name('users.store')->middleware('auth');
 Route::delete('users/{user}', 'UserController@destroy') -> name('users.destroy')->middleware('auth');
 Route::get('users/{user}', 'UserController@edit')->name('users.edit')->middleware('auth');
+Route::get('/Search', 'UserController@search')->name('users.search')->middleware('auth');
 Route::put('users/{user}', 'UserController@update')->name('users.update')->middleware('auth');
 Route::get('/reporte', 'ReporteController@index')->name('reportes.index')->middleware('auth');
 Route::get('/home',function(){
-    return view('auth.register');
+    return view('home');
 })->middleware('auth');
 
 Route::get ('/consulta','ConsultaController@index')-> name('consulta')->middleware('auth');

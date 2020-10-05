@@ -42,7 +42,7 @@ tr:nth-child(even){
     <td>Fecha</td>
     <td>Inicio de la llamada</td>
     <td>Fin de la llamada</td>
-    <td>Tipo de Alerta</td>
+    <td>Nivel de Alerta</td>
     <td>Respuesta</td>
     <td>Atendido</td>
     <td>Calificacion</td>
@@ -68,13 +68,13 @@ tr:nth-child(even){
     <td>
         @switch($usuario->tipo_alerta)
             @case(1)
-                Verde
+                Baja
                 @break
             @case(2)
-                Amarillo
+                Media
                 @break
             @case(3)
-                Rojo
+                Alta
                 @break
             @endswitch
     </td>

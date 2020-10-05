@@ -54,11 +54,11 @@
                                 <textarea name="asunto" rows="6" class="form-control" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label>Tipo de Alerta *</label>
+                                <label>Nivel de Alerta *</label>
                                 <select name="tipo_alerta" class="form-group" required>
-                                    <option value="1">Verde</option>
-                                    <option value="2">Amarillo</option>
-                                    <option value="3">Rojo</option>
+                                    <option value="1">Baja</option>
+                                    <option value="2">Media</option>
+                                    <option value="3">Alta</option>
                                 </select>
                             </div>
                             <div class="form-group">

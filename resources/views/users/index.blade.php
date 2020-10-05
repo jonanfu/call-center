@@ -1,39 +1,34 @@
 @extends('layouts.app')
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap4.min.css">
+<style type="text/css">
+table{
+    text-align: left;
+    border-collapse:collapse;
+    widht:100%;
+}
+th,td{
 
+   padding:20px;
+}
+thead{
+    font-weight: bold;
+}
+tr:nth-child(even){
+    background-color: #ddd;
+}
+</style>
 @section('content')
-        <div class="container">
-            <!--<div class="row">
-                <div class="col-sm-8 ex-auto">
-                <div class="card border-0 shadow">
-                <div class="card-body">
-                    @if($errors->any())
-                        <div class="alert alert-danger">
-                            @foreach($errors->all() as $error)
-                                - {{$error}} <br>
-                            @endforeach
-                        </div>
-                    @endif
-                    <form action="{{ route('users.store') }}" method="POST">
-                        <div class="form-row">
-                            <div class="col-sm-3">
-                                <input type="text" name="name" class="form-control" placeholder="Nombre" value="{{ old('name')}}">
-                            </div>
-                            <div class="col-sm-4">
-                                <input type="text" name="email" class="form-control" placeholder="Email" value="{{ old('email')}}">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="password" name="password" class="form-control" placeholder="Contraseña">
-                            </div>
-                            <div class="col-auto">
-                                @csrf
-                                <button type="submit" class="btn btn-primary">Enviar</button>
-                            </div>
-                        </div>
-                    </form>
-                    
-                    </div>
-                </div>-->
-                <table class="table">
+
+<h1>Usuarios registrados</h1>
+
+
+<div class="card">
+<div class="cardbody">
+
+<table id="llamadas" class="table">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -46,8 +41,7 @@
                             <th>Nivel</th>
                             <th>Paralelo</th>
                             <th>Rol</th>
-                            <th>&nbsp;</th>
-                            <th>&nbsp;</th>
+                            
                         </tr>
                           
                     </thead>
@@ -184,8 +178,36 @@
                     @endforeach
                     </tbody>
                 </table>
-                {{ $users -> links() }}
                 </div>
-            </div>
-        </div>
+
+</div>
+
+    
+   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+   <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+   <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+   <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+   <script src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js"></script>
+
+   <script>
+    $('#llamadas').DataTable({
+        responsive:true,
+        autoWidth:false,
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron registros",
+            "info": "Mostrando pagina _PAGE_ de _PAGES_",
+            "infoEmpty": "No existen registros",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+            'search': 'Buscar registros: ',
+            'paginate':{
+                'next':'Siguiente',
+            'previous':'Anterior'            }
+        }
+    }
+      
+    );
+   </script>
+
+   
 @endsection

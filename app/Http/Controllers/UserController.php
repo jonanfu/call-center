@@ -9,6 +9,7 @@ class UserController extends Controller
 {
     public function index()
     {
+        
         $users = User::orderBy('id', 'DESC')->paginate();
         return view('users.index', [
             'users' => $users
@@ -45,10 +46,14 @@ class UserController extends Controller
         return view('users.edit', compact('user'));
     }
 
+
     public function update(Request $request, User $user)
     {
+        $request->validate([
+            'password' => ['required', 'min:8']
+        ]);
         
-        $user->update($request->all());
+        $user->update([ 'password' => Hash::make($request->password) ] + $request->all());
         return back()->with('status', 'Se ha actualizado los datos del usuario');
     }
 

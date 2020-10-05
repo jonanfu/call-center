@@ -57,11 +57,11 @@
                                 <textarea name="asunto" rows="6" class="form-control" required>{{ old('asunto', $llamada->asunto) }}</textarea>
                             </div>
                             <div class="form-group">
-                                <label>Tipo de Alerta *</label>
+                                <label>Nivel de Alerta *</label>
                                 <select name="tipo_alerta" class="form-group" value={{ old('tipo_alerta', $llamada->tipo_alerta) }}>
-                                    <option value="1" {{ old('tipo_alerta', $llamada->tipo_alerta) == "1"  ? 'selected' : '' }}>Verde</option>
-                                    <option value="2" {{ old('tipo_alerta', $llamada->tipo_alerta) == "2"  ? 'selected' : '' }}>Amarillo</option>
-                                    <option value="3" {{ old('tipo_alerta', $llamada->tipo_alerta) == "3"  ? 'selected' : '' }}>Rojo</option>
+                                    <option value="1" {{ old('tipo_alerta', $llamada->tipo_alerta) == "1"  ? 'selected' : '' }}>Baja</option>
+                                    <option value="2" {{ old('tipo_alerta', $llamada->tipo_alerta) == "2"  ? 'selected' : '' }}>Media</option>
+                                    <option value="3" {{ old('tipo_alerta', $llamada->tipo_alerta) == "3"  ? 'selected' : '' }}>Alta</option>
                                 </select>
                             </div>
                             <div class="form-group">
