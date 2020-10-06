@@ -179,6 +179,7 @@ tr:nth-child(even){
                     @endforeach
                     </tbody>
                 </table>
+                {{ $users -> links() }}
                 </div>
 
 </div>
