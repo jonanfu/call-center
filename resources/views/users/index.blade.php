@@ -41,7 +41,8 @@ tr:nth-child(even){
                             <th>Nivel</th>
                             <th>Paralelo</th>
                             <th>Rol</th>
-                            
+                            <th></th>
+                            <th></th>
                         </tr>
                           
                     </thead>
