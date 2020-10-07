@@ -94,7 +94,6 @@ tr:nth-child(even){
   </thbody>
 </table>
 </div>
-
 </div>
 
     
