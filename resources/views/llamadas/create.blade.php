@@ -68,7 +68,7 @@
                             <div class="form-group">
                                 <label>Atendido *</label>
                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="si" name="atendido" class="custom-control-input" value="si">
+                                    <input checked type="radio" id="si" name="atendido" class="custom-control-input" value="si">
                                     <label class="custom-control-label" for="si">Si</label>
                                 </div>
                                 <div class="custom-control custom-radio custom-control-inline">
