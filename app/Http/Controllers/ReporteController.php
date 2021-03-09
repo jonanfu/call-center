@@ -18,21 +18,13 @@ class ReporteController extends Controller
         return view('reportes.index', compact('llamadas'));
     }
 
-    public function exportPdf(){
-        //$options = new Options();
-        //$options->set('isRemoteEnabled', True);
-        
-        
-        $llamadas = Llamada::get();
-        $pdf = \PDF::loadView('pdf.llamadas', compact('llamadas'));
-       // $pdf->setOptions(['isRemoteEnabled' => True]);
-        return $pdf->stream('reporte.pdf');
 
-
-    }
-
+ 
     public function verReporte(Request $request){
+        //obtener la fecha
         $now = Carbon::now();
+        $fecha_reporte = ['fecha_inicio' => $request->fecha_inicio, 'fecha_fin' => $request->fecha_fin];
+        
 
         //$llamadas = Llamada::join('users','llamadas.user_id','=','users.id')
         //    ->whereBetween('fecha', [$request->fecha_inicio, $request->fecha_fin])
@@ -45,7 +37,7 @@ class ReporteController extends Controller
         //dd($llamadas);
         //return view('pdf.llamadas', compact('llamadas'));
 
-        $pdf = \PDF::loadView('pdf.llamadas', compact('llamadas', 'now'));
+        $pdf = \PDF::loadView('pdf.llamadas', compact('llamadas', 'now', 'fecha_reporte'));
        // $pdf->setOptions(['isRemoteEnabled' => True]);
         return $pdf->stream('reporte.pdf');
     }

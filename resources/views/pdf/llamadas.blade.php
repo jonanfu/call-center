@@ -36,8 +36,9 @@
         </style>
 </head>
 <body>
-<img src="https://pbs.twimg.com/profile_images/1009791486433558528/WwTggA1W_400x400.jpg" class="upec">
-<img src="http://190.15.129.119/callcenterupec/wp-content/uploads/2020/09/cropped-logo-call-center-1-180x180.jpg" class="call_center" alt="">
+
+<img src="https://i.ibb.co/qRDns86/logo-upec.jpg" class="upec">
+<img src="https://i.ibb.co/ccnZBVW/logo-call-center.png" class="call_center" alt="">
 
 <h2>Universidad Politécnica Estatal del Carchi</h2>
 <h2>Call Center Upec</h2>
@@ -81,7 +82,7 @@
 </h3> 
 <h3>Fecha: {{ $now->format('d-m-Y') }}</h3>
 <h3>Hora: {{ $now->format('H:i')}}</h3>
-
+<h3>Reporte generado entre {{ $fecha_reporte['fecha_inicio']}} al {{$fecha_reporte['fecha_fin']}}</h3>
 
 <h4>LLamadas</h4>
 
