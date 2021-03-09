@@ -43,7 +43,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.pdf') }}"> reporte </a>
+                            </li>
                             
                         @else
                             @switch(Auth::user()->rol)

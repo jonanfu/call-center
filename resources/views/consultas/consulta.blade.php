@@ -22,6 +22,41 @@ tr:nth-child(even){
 </style>
 @section('content')
 
+<div class="container ">
+            <div class="row">
+                <div class="col-sm-12">
+                <div class="card border-0">
+                <div class="card-body">
+                    @if($errors->any())
+                        <div class="alert alert-danger">
+                            @foreach($errors->all() as $error)
+                                - {{$error}} <br>
+                            @endforeach
+                        </div>
+                    @endif
+                    <form action="{{ route('llamada.reporte') }}" method="POST">
+                        <div class="form-inline">
+                            <div class="form-group col-sm-5">
+                                <label class="my-1 mr-2">Fecha Inicio</label>
+                                <input type="date" name="fecha_inicio" class="form-control">
+                            </div>
+                            <div class="form-group col-sm-5">
+                                <label class="my-1 mr-2">Fecha Fin</label>
+                                <input type="date" name="fecha_fin" class="form-control">
+                            </div>
+                            <div class="col-auto">
+                                @csrf
+                                <button type="submit" class="btn btn-primary form-control">Generar Reporte</button>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </di>
+        </div>
+    </div>
+</div>
+
 <h1>Llamadas Registradas</h1>
 
 

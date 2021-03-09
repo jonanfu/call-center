@@ -30,3 +30,5 @@ Route::get ('/issabel','IssabelController@index')-> name('issabel');
 
 Route::get('/usuarios', 'UserController@index')->name('usuarios')->middleware('auth');
 Route::resource('llamadas', 'Backend\LlamadaController')->middleware('auth')->except('show');
+Route::get('user-list-pdf', 'ReporteController@exportPdf')->name('user.pdf');
+Route::post('reportever', 'ReporteController@verReporte')->name('llamada.reporte');
