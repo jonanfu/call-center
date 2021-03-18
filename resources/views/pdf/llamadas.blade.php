@@ -14,8 +14,6 @@
           }
 
           
-          
-          
           h2, h4 {
             text-align: center;
           }
@@ -32,6 +30,13 @@
           }
           .upec{
             margin-top: 5mm;
+          }
+          footer {
+            position: absolute;
+            bottom:0px;
+          }
+          footer > div > p{
+            text-align:center;
           }
         </style>
 </head>
@@ -166,6 +171,14 @@
     
     </table>
     @endforeach 
+
+    <footer>
+          <div>
+            <p>______________________________________________</p>
+            <p>{{auth()->user()->full_name}}</p>
+            <p>Docente</p>
+          </div>
+    </footer>
 </body>
 
 </html>
