@@ -92,6 +92,7 @@
 <h4>LLamadas</h4>
 
 @foreach($llamadas as $llamada)
+    @if($llamada->cedula == $cedula)
 <table>
             <tr>
                 <th>Código</th>
@@ -170,6 +171,7 @@
    
     
     </table>
+    @endif
     @endforeach 
 
     <footer>

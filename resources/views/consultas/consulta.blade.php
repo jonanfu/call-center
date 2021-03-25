@@ -35,18 +35,29 @@ tr:nth-child(even){
                         </div>
                     @endif
                     <form action="{{ route('llamada.reporte') }}" method="POST">
-                        <div class="form-inline">
-                            <div class="form-group col-sm-5">
+                        <div class="form-row align-items-center">
+                            <div class="col-sm-3  align-self-center">
                                 <label class="my-1 mr-2">Fecha Inicio</label>
-                                <input type="date" name="fecha_inicio" class="form-control">
+                                <input type="date" name="fecha_inicio" id="fecha_inicion" class="form-control">
                             </div>
-                            <div class="form-group col-sm-5">
+                            <div class="col-sm-3  align-self-center">
                                 <label class="my-1 mr-2">Fecha Fin</label>
-                                <input type="date" name="fecha_fin" class="form-control">
+                                <input type="date" name="fecha_fin" id="fecha_fin" class="form-control">
                             </div>
-                            <div class="col-auto">
+                            <div class="col-sm-3  align-self-center">
+                                <label class="my-1 mr-2">Tipo de reporte</label>
+                                <select name="tipo_reporte" id="tipo_reporte" class="custom-select form-control">
+                                    <option value="1">Reporte general</option>
+                                    <option value="2">Reporte por estudiante</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3  align-self-center">
+                                <label class="my-1 mr-2">Número de cedula</label>
+                                <input type="text" name="buscar_cedula" id="buscar_cedula"class="form-control" placeholder="Cédula" disabled>
+                            </div>
+                            <div class="col-auto mx-auto my-3">
                                 @csrf
-                                <button type="submit" class="btn btn-primary form-control">Generar Reporte</button>
+                                <button type="submit" class="btn btn-primary form-control ">Generar Reporte</button>
                             </div>
                         </div>
                     </form>
@@ -159,5 +170,5 @@ tr:nth-child(even){
     );
    </script>
 
-   
+   <script src="{{ asset('js/reporte.js') }}"></script>
 @endsection

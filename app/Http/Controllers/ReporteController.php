@@ -24,21 +24,25 @@ class ReporteController extends Controller
         //obtener la fecha
         $now = Carbon::now();
         $fecha_reporte = ['fecha_inicio' => $request->fecha_inicio, 'fecha_fin' => $request->fecha_fin];
-        
+        $cedula = $request->buscar_cedula;
+        switch($request->tipo_reporte){
+            case 1:
+                $llamadas = User::join('llamadas', 'users.id', '=', 'llamadas.user_id')
+                ->whereBetween('fecha', [$request->fecha_inicio, $request->fecha_fin])
+                ->get();
 
-        //$llamadas = Llamada::join('users','llamadas.user_id','=','users.id')
-        //    ->whereBetween('fecha', [$request->fecha_inicio, $request->fecha_fin])
-        //    ->get()
-        //;
+                $pdf = \PDF::loadView('pdf.reporte_general', compact('llamadas', 'now', 'fecha_reporte'));
+                return $pdf->stream('reporte.pdf');
+                break;
 
-        $llamadas = User::join('llamadas', 'users.id', '=', 'llamadas.user_id')
-            ->whereBetween('fecha', [$request->fecha_inicio, $request->fecha_fin])
-            ->get();
-        //dd($llamadas);
-        //return view('pdf.llamadas', compact('llamadas'));
+            case 2:
+                $llamadas = User::join('llamadas', 'users.id', '=', 'llamadas.user_id')
+                ->whereBetween('fecha', [$request->fecha_inicio, $request->fecha_fin])
+                ->get();
 
-        $pdf = \PDF::loadView('pdf.llamadas', compact('llamadas', 'now', 'fecha_reporte'));
-       // $pdf->setOptions(['isRemoteEnabled' => True]);
-        return $pdf->stream('reporte.pdf');
+                $pdf = \PDF::loadView('pdf.reporte_estudiante', compact('llamadas', 'now', 'fecha_reporte', 'cedula'));
+                return $pdf->stream('reporte.pdf');
+                break;
+        }
     }
 }
